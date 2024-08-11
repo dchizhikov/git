@@ -1,5 +1,5 @@
 import os
-def git_add(file_local):
+def git_add(file_local="."):
 #  !git add $file_local
   os.system(f"git add {file_local}")
 def git_clone(repo):
