@@ -1,6 +1,6 @@
 import os
 def git_add(file_local="."):
-#  !git add $file_local #999900000
+#  !git add $file_local
   os.system(f"git add {file_local}")
 def git_clone(repo):
 #  %cd "/content/"
@@ -9,7 +9,7 @@ def git_clone(repo):
   os.system(f"git clone {repo}")
 def git_commit(message):
 #  !git commit -m '1 commit message'
-  os.system(f"git commit -m {message}")  
+  os.system(f"git commit -m '{message}'")  
 def git_config(user_name):
 #  !git config --global user.email '$uname@gmail.com'
 #  !git config --global user.name '$uname'
