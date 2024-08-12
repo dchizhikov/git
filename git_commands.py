@@ -25,7 +25,7 @@ def git_push(branch, remote_branch):
   os.system(f"git push {branch} {remote_branch}")
 def git_remote(myRepo, repo_name, branch, user_name):
   os.chdir(myRepo)
-  public_token = ""
+  public_token = "_public_token_"
   repo_name_git = repo_name+".git"
   repo_url=f"https://{user_name}:{public_token}@github.com/{user_name}/{repo_name_git}"
 #  branch = "origin511"
