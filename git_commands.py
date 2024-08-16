@@ -2,11 +2,11 @@ import os
 def git_add(file_local="."):
 #  !git add $file_local
   os.system(f"git add {file_local}")
-def git_clone(repo):
-#  %cd "/content/"
-#  !git clone $repo #{repo}
-  os.chdir("/content/")
-  os.system(f"git clone {repo}")
+def git_clone(repo_url, repo_up):
+#  %cd repo_up
+#  !git clone $repo_url #{repo_url}
+  os.chdir(repo_up)
+  os.system(f"git clone {repo_url}")
 def git_commit(message):
 #  !git commit -m '1 commit message'
   os.system(f"git commit -m '{message}'")  
