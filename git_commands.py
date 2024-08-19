@@ -7,6 +7,11 @@ def git_clone(repo_url, repo_up):
 #  !git clone $repo_url #{repo_url}
   os.chdir(repo_up)
   os.system(f"git clone {repo_url}")
+def git_clone_private(user_name, repo_name_git, repo_up, key):
+  #git clone https://<PAT>@github.com/<username>/<repo>.git
+  os.chdir(repo_up)
+  repo_url=f"https://{user_name}:{key}@github.com/{user_name}/{repo_name_git}"
+  os.system(f"git clone {repo_url}")
 def git_commit(message):
 #  !git commit -m '1 commit message'
   os.system(f"git commit -m '{message}'")  
