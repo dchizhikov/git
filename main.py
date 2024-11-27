@@ -25,9 +25,9 @@ if not os.path.exists(f'{config.repo_name}'):
   gc.git_pull(config.branch, config.remote_branch)
 else:
   os.chdir(config.myRepo)
-  print(os.getcwd())
+  print(os.getcwd(), config.branch)
   gc.git_add() #!git add .
-  message = f'git 13 commit message'
+  message = f'git 14 commit message'
   gc.git_commit(message)
   gc.git_push(config.branch, config.remote_branch)
 
