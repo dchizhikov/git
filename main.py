@@ -1,4 +1,4 @@
-import Gitbbb.config as config
+import git.config as config
 import importlib
 import os
 
@@ -8,7 +8,7 @@ imported_modules = {}
 # Импортируем и перезагружаем модули
 for module in modules_list:
     # Динамический импорт модуля
-    imported_module = importlib.import_module(f"{config.folder_name}.{module}")
+    imported_module = importlib.import_module(f"{config.folder_name}.modules.{module}")
     importlib.reload(imported_module)
 
     # Сохраняем модуль в словаре
