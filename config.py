@@ -3,13 +3,7 @@ import os
 current_file_path = __file__
 directory_path = os.path.dirname(current_file_path)
 folder_name = os.path.basename(directory_path)
-
-# Получаем полный путь к родительской директории
 parent_directory_path = os.path.dirname(directory_path)
-
-print("Имя папки:", folder_name)
-print("Полный путь к родительской папке:", parent_directory_path)
-
 
 user_name = "dchizhikov"
 repo_name_git = "git"
