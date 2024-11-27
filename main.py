@@ -31,7 +31,7 @@ if not os.path.exists(f'{config.repo_name}'):
 else:
   os.chdir(config.myRepo)
   gc.git_add() #!git add .
-  message = f'git 11 commit message'
+  message = f'git 12 commit message'
   gc.git_commit(message)
   gc.git_push(config.branch, config.remote_branch)
 

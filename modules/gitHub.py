@@ -1,4 +1,4 @@
-import Gitbbb.config as config
+import git.config as config
 import requests
 
 def getModuleGitHub(file_git='git_commands.py', file_local='git_com.py'):
@@ -8,4 +8,4 @@ def getModuleGitHub(file_git='git_commands.py', file_local='git_com.py'):
   with open(f'{config.repo_up}/{file_local}', 'w') as f:
     f.write(response.text)
 
-getModuleGitHub('git_commands.py', 'git_com.py')
+#getModuleGitHub('git_commands.py', 'git_com.py')
