@@ -5,7 +5,7 @@ import os
 print("Начало")
 
 folder_modules = 'modules'
-folder_modules_path = config.myRepo+'/' +folder_modules
+folder_modules_path = 'git'+'/' +folder_modules #config.myRepo+'/' +folder_modules
 modules_list = [os.path.splitext(file)[0] for file in os.listdir(folder_modules_path) if file.endswith('.py')]
 imported_modules = {}
 
@@ -25,6 +25,7 @@ if not os.path.exists(f'{config.repo_name}'):
   gc.git_pull(config.branch, config.remote_branch)
 else:
   os.chdir(config.myRepo)
+  print(os.getcwd())
   gc.git_add() #!git add .
   message = f'git 13 commit message'
   gc.git_commit(message)
