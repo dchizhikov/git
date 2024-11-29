@@ -27,7 +27,7 @@ else:
   os.chdir(config.myRepo)
   print(os.getcwd(), config.branch)
   gc.git_add() #!git add .
-  message = f'git 14 commit message'
+  message = f'git main_up_abstract commit message'
   gc.git_commit(message)
   gc.git_push(config.branch, config.remote_branch)
 
