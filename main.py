@@ -1,16 +1,17 @@
-#import git.config as config
 import importlib
 import os
 import sys
 
-sys.path.append(f'/content/git')
+repo_up_git = '/content/git'
+
+sys.path.append(repo_up_git)
 config = importlib.import_module('config')
-sys.path.append(f'/content/git/modules/')
+sys.path.append(f'{repo_up_git}/modules/')
 
 print("Начало")
 
 folder_modules = 'modules'
-folder_modules_path = '/content/git'+'/' +folder_modules #config.myRepo+'/' +folder_modules
+folder_modules_path = repo_up_git+'/'+folder_modules
 modules_list = [os.path.splitext(file)[0] for file in os.listdir(folder_modules_path) if file.endswith('.py')]
 imported_modules = {}
 
