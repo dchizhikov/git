@@ -1,5 +1,9 @@
-import git.config as config
+import importlib
 import requests
+import sys
+
+sys.path.append(f'/content/git')
+config = importlib.import_module('config')
 
 def getModuleGitHub(file_git='git_commands.py', file_local='git_com.py'):
   url = "https://raw.githubusercontent.com/"+config.user_name+"/"+config.repo_name_git+"/main/"+file_git

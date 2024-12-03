@@ -1,23 +1,29 @@
-import git.config as config
+#import git.config as config
 import importlib
 import os
+import sys
+
+sys.path.append(f'/content/git')
+config = importlib.import_module('config')
+sys.path.append(f'/content/git/modules/')
 
 print("Начало")
 
 folder_modules = 'modules'
-folder_modules_path = 'git'+'/' +folder_modules #config.myRepo+'/' +folder_modules
+folder_modules_path = '/content/git'+'/' +folder_modules #config.myRepo+'/' +folder_modules
 modules_list = [os.path.splitext(file)[0] for file in os.listdir(folder_modules_path) if file.endswith('.py')]
 imported_modules = {}
+print(modules_list)
 
 # Импортируем и перезагружаем модули
 for module in modules_list:
     # Динамический импорт модуля
-    imported_module = importlib.import_module(f"{config.folder_name}.{folder_modules}.{module}")
-    importlib.reload(imported_module)
+    imported_module = importlib.import_module(module)
+#    importlib.reload(imported_module)
     imported_modules[module] = imported_module
 
 gc = imported_modules['git_com']
-
+'''
 if not os.path.exists(f'{config.repo_name}'): 
   gc.git_clone(config.repo_url, config.repo_up)
   gc.git_config(config.user_name)
@@ -30,5 +36,5 @@ else:
   message = f'git main_up_abstract commit message'
   gc.git_commit(message)
   gc.git_push(config.branch, config.remote_branch)
-
+'''
 print("Конец")
