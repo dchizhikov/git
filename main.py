@@ -13,7 +13,6 @@ folder_modules = 'modules'
 folder_modules_path = '/content/git'+'/' +folder_modules #config.myRepo+'/' +folder_modules
 modules_list = [os.path.splitext(file)[0] for file in os.listdir(folder_modules_path) if file.endswith('.py')]
 imported_modules = {}
-print(modules_list)
 
 # Импортируем и перезагружаем модули
 for module in modules_list:
@@ -23,6 +22,8 @@ for module in modules_list:
     imported_modules[module] = imported_module
 
 gc = imported_modules['git_com']
+test = imported_modules['test_hello']
+test.hello()
 '''
 if not os.path.exists(f'{config.repo_name}'): 
   gc.git_clone(config.repo_url, config.repo_up)
