@@ -1,7 +1,9 @@
 import importlib
 import sys
 
-folder = '/content/tg_bot' #['git', 'tg_bot', 'databases', '...']
+repo_up = sys.argv[1]
+repo_name = sys.argv[2]
+folder = repo_up+repo_name #['git', 'tg_bot', 'databases', '...']
 module = 'main' #['main', 'sqlite.main', '...']
 
 sys.path.append(f'{folder}')

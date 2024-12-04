@@ -44,7 +44,7 @@ user_name = "dchizhikov"
 repo_name_git = "git"
 
 repo_up = envConfig["githubRepoUp"][envOn]
-repo_name = "databases" #git #UML #databases #Telegram #tg_bot
+repo_name = "tg_bot" #git #UML #databases #Telegram #tg_bot
 myRepo = repo_up+repo_name
 repo_url = "https://github.com/"+user_name+"/"+repo_name
 
@@ -85,9 +85,10 @@ if not os.path.exists(destination_file):
   os.system(f'cp {source_file} {destination_file}')
 
 isBot = True
-run_arg = userdata.get('bot_token') if isBot else ''
+bot_token = userdata.get('bot_token') if isBot else ''
+run_args = [repo_up, repo_name, bot_token]
 
-try: subprocess.run(['python', '/content/main_base.py', run_arg], check=True)
+try: subprocess.run(['python', repo_up+'main_base.py'] + run_args, check=True)
 except KeyboardInterrupt: print("Остановлено вручную")
 except subprocess.CalledProcessError as e: print(f"Произошла ошибка: {e}")
 except Exception as e: print(f"Произошла ошибка: {e}")
@@ -102,6 +103,6 @@ gc.git_push(branch, remote_branch)
 
 os.chdir(repo_up+repo_name_git)
 gc.git_add() #!git add .
-message = f'git t-0.4 commit message'
+message = f'git colab-0.0 commit message'
 gc.git_commit(message)
 gc.git_push(branch, remote_branch)
