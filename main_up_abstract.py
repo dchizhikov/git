@@ -1,9 +1,7 @@
 import importlib
 import sys
 
-repo_up = sys.argv[1]
-repo_name = sys.argv[2]
-folder = repo_up+repo_name #['git', 'tg_bot', 'databases', '...']
+folder = sys.argv[1] #myRepo
 module = 'main' #['main', 'sqlite.main', '...']
 
 sys.path.append(f'{folder}')
